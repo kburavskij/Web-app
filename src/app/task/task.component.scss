@@ -1,0 +1,28 @@
+.taskContainer{
+  height: 100px;
+  position: absolute;
+  width:100%;
+  bottom:0;
+  margin: 0;
+}
+//.todayButton{
+//  align-items: center;
+//  position: center;
+//}
+.addTaskButton {
+  margin: 0;
+  display: block;
+  width: 100%;
+  top:25%;
+  bottom: 25%;
+  border: none;
+  background-color: #d29830;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  position:relative;
+}

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<!--Interactable calendar div-->
+<div class="calendarContainer">
+
+  <!--First row with date and button-->
+  <div class="monthYearContainer">
+  <b class="monthYear">{{todayDate.toLocaleString('en-GB', { month: 'long' })}} {{todayDate.getFullYear()}}</b>
+  <div class="stacked-icons">
+    <button class="todayButton">
+
+  <span class="fa-stack fa-3x">
+    <i class="fa fa-calendar-o fa-stack-2x"></i>
+    <strong class="fa-stack-1x calendar-text">{{todayDate.getDate()}}</strong>
+          </span>
+    </button>
+  </div>
+</div>
+
+  <div class="daySelectContainer">
+  <div class="daySelectButton" (click)="console.error('Clicked')" *ngFor="let weekday of mockData, let i = index">
+    <div class="weekdaysString" [ngStyle]="{'color': mockData[i].date.getDay()===0 || mockData[i].date.getDay()===6 ? 'gray' : 'black' }"> {{mockData[i].date.toLocaleString('en-GB', {weekday: 'short'})}}</div>
+    <div class="dayNumber" [ngStyle]="{'border-color': mockData[i].date===todayDate ? 'orange' : 'none', 'border-style': mockData[i].date===todayDate ? 'solid' : 'none'}" > {{mockData[i].date.getDate()}}</div>
+    <div class="workHoursNumber" > {{ totalHours(i) }} </div>
+    <div class="taskBulb" [ngStyle]="taskBulb(i)"> </div>
+</div>
+  </div>
+
+  <div>
+
+  </div>
+
+</div>
